@@ -1,14 +1,15 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 
 if (process.env.NODE_ENV !== "production") {
 	require("dotenv").config();
 }
 
-app.use(express.static("pubic"));
+app.use(express.static(path.join(__dirname, "frontend", "build")));
 
 app.get("/", (req, res) => {
-	res.send("Hello, World!");
+	res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
 });
 
 const PORT = process.env.PORT || 3000;
