@@ -2,10 +2,10 @@
   "name": "lstmweather",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "server.ts",
   "scripts": {
     "dev": "nodemon node server.js",
-    "start": "node server.js"
+    "start": "node server.ts"
   },
   "keywords": [],
   "author": "",
