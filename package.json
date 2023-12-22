@@ -5,7 +5,8 @@
   "main": "server.ts",
   "scripts": {
     "dev": "nodemon node server.ts",
-    "start": "node server.ts"
+    "start": "node server.ts",
+    "build": "cd frontend && npm run build"
   },
   "keywords": [],
   "author": "",
