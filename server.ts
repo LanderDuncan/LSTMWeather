@@ -4,9 +4,9 @@ import path from 'path';
 const __dirname = path.resolve();
 import dotenv from 'dotenv';
 
-if (process.env.NODE_ENV !== 'production') {
-	dotenv.config();
-}
+// if (process.env.NODE_ENV !== 'production') {
+// 	dotenv.config();
+// }
 
 // Connect to db
 import { MongoClient } from "mongodb";
