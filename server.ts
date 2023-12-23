@@ -7,6 +7,7 @@ import dotenv from "dotenv";
 if (process.env.NODE_ENV !== 'production') {
 	dotenv.config();
   };
+
 // Connect to db
 import { MongoClient } from "mongodb";
 
