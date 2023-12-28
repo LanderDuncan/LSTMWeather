@@ -5,8 +5,8 @@
   "main": "server.ts",
   "type": "module",
   "scripts": {
-    "dev": "npx tsx watch server.ts",
-    "start": "npx tsx server.ts",
+    "dev": "npx tsx watch backend/server.ts",
+    "start": "npx tsx backend/server.ts",
     "build": "cd frontend && npm i && npm run build"
   },
   "keywords": [],
