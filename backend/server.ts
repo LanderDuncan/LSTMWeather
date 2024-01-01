@@ -1,21 +1,21 @@
 import express from "express";
 const app = express();
-import path from 'path';
+import path from "path";
 const __dirname = path.resolve();
 import dotenv from "dotenv";
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== "production") {
 	dotenv.config();
-  };
+}
 
 // Connect to db
 import { MongoClient } from "mongodb";
 
-let uri: string
+let uri: string;
 if (process.env.URI) {
-	uri = process.env.URI
+	uri = process.env.URI;
 } else {
-	throw new Error("URI environment variable is not set")
+	throw new Error("URI environment variable is not set");
 }
 
 const client = new MongoClient(uri);
@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/forecast/:startDate/:count", async (req, res) => {
-	let recordsToQuery: number = parseInt(req.params.count)
+	let recordsToQuery: number = parseInt(req.params.count);
 	let startDate: Date = new Date(req.params.startDate);
 	if (isNaN(recordsToQuery) || isNaN(startDate.getTime())) {
 		// Illegal argument
