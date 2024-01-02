@@ -1,11 +1,15 @@
-import "./App.css";
+import Body from "./components/Body";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">Hello, World!</header>
+      <Header />
+      <Body />
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
