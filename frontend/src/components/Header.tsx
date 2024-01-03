@@ -6,8 +6,12 @@ const Header = () => {
         <a href="/about">About</a>
       </div>
       <div id="githubLogo">
-        <a href="https://github.com/LanderDuncan/LSTMWeather">
-          <img src="/github-mark-white.png" alt="GitHub logo" />
+        <a
+          href="https://github.com/LanderDuncan/LSTMWeather"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src="/github-mark-white.svg" alt="GitHub logo" />
         </a>
       </div>
     </header>
