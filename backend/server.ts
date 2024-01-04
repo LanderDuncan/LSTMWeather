@@ -61,6 +61,10 @@ app.get("/api/forecast/:startDate/:count", async (req, res) => {
   }
 });
 
+app.get("/api/getlstm", async (req, res) => {
+    res.json("./../models/LSTMjs/model.json");
+});
+
 // Open server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
