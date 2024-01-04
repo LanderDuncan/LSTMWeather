@@ -3,6 +3,8 @@ const app = express();
 import path from "path";
 const __dirname = path.resolve();
 import dotenv from "dotenv";
+import modelData from "../models/LSTMjs/model.json";
+// import bin from "../models/LSTMjs/group1-shard1of1.bin";
 
 if (process.env.NODE_ENV !== "production") {
   dotenv.config();
@@ -61,9 +63,21 @@ app.get("/api/forecast/:startDate/:count", async (req, res) => {
   }
 });
 
-app.get("/api/getlstm", async (req, res) => {
-    res.json("./../models/LSTMjs/model.json");
+app.get("/tfjs_artifacts/model.json", async (req, res) => {
+    res.json(modelData);
 });
+app.get("/tfjs_artifacts/group1-shard1of1.bin", async (req, res) => {
+  const filePath = path.join(__dirname, '/models/LSTMjs/group1-shard1of1.bin');
+  
+  // Sending the file as a download
+  res.download(filePath, 'group1-shard1of1.bin', (err) => {
+    if (err) {
+      // Handle errors, such as the file not existing
+      console.log(err);
+      res.status(404).send('File not found');
+    }})
+});
+
 
 // Open server
 const PORT = process.env.PORT || 3000;
