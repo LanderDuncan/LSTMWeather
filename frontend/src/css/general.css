@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+* {
+  margin: 0;
+  border: 0;
+}
+
+/* Styling for the Header */
+header {
+  width: 100%;
+  height: 50px;
+  background-color: #000000;
+  display: flex;
+  justify-content: space-between;
+}
+
+#headerLinks {
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#headerLinks a {
+  color: white;
+  text-decoration: none;
+  line-height: 50px;
+  font-size: x-large;
+  font-family: "Roboto";
+}
+
+#githubLogo {
+  display: flex;
+  margin-right: 20px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#githubLogo a {
+  height: 75%;
+}
+
+#githubLogo img {
+  height: 100%;
+}
+
+/* Styling for the Body */
+#body {
+  background-color: #172a3a;
+  width: 100%;
+  height: calc(100vh - 50px);
+}
+
+/* Styling for the Footer */
+footer {
+  width: 100%;
+  height: 35px;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer p {
+  color: white;
+  font-size: large;
+  font-family: "Roboto";
+  margin-left: 20px;
+}
+
+@media only screen and (max-width: 480px) {
+  footer p {
+    font-size: small;
+  }
+}
