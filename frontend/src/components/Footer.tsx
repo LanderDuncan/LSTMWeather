@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer>
-      <p>© 2023 Lander Duncan and Martin Angell, No Rights Reserved</p>
+      <p>© 2024 Lander Duncan and Martin Angell, No Rights Reserved</p>
     </footer>
   );
 };

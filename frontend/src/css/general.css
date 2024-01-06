@@ -68,6 +68,11 @@ footer p {
   margin-left: 20px;
 }
 
+.Error {
+  color: red;
+  text-align: center;
+}
+
 @media only screen and (max-width: 480px) {
   footer p {
     font-size: small;

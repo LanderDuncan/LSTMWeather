@@ -31,11 +31,6 @@ interface Forecast {
   temp: number;
 }
 
-// Routes
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
-});
-
 app.get("/api/forecast/:startDate/:count", async (req, res) => {
   const recordsToQuery: number = parseInt(req.params.count);
   const startDate: Date = new Date(req.params.startDate);
@@ -77,6 +72,11 @@ app.get("/tfjs_artifacts/group1-shard1of1.bin", async (req, res) => {
       res.status(404).send("File not found");
     }
   });
+});
+
+// Routes
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
 });
 
 // Open server
