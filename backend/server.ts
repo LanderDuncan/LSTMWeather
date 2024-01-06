@@ -64,20 +64,20 @@ app.get("/api/forecast/:startDate/:count", async (req, res) => {
 });
 
 app.get("/tfjs_artifacts/model.json", async (req, res) => {
-    res.json(modelData);
+  res.json(modelData);
 });
 app.get("/tfjs_artifacts/group1-shard1of1.bin", async (req, res) => {
-  const filePath = path.join(__dirname, '/models/LSTMjs/group1-shard1of1.bin');
-  
+  const filePath = path.join(__dirname, "/models/LSTMjs/group1-shard1of1.bin");
+
   // Sending the file as a download
-  res.download(filePath, 'group1-shard1of1.bin', (err) => {
+  res.download(filePath, "group1-shard1of1.bin", (err) => {
     if (err) {
       // Handle errors, such as the file not existing
       console.log(err);
-      res.status(404).send('File not found');
-    }})
+      res.status(404).send("File not found");
+    }
+  });
 });
-
 
 // Open server
 const PORT = process.env.PORT || 3000;
