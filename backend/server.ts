@@ -4,7 +4,7 @@ import path from "path";
 const __dirname = path.resolve();
 import dotenv from "dotenv";
 import modelData from "../models/LSTMjs/model.json";
-import { getData } from "./Library/LSTMFunc";
+import getData from "./Library/LSTMFunc";
 
 if (process.env.NODE_ENV !== "production") {
   dotenv.config();
@@ -24,12 +24,6 @@ const client = new MongoClient(uri);
 
 // Configure Express
 app.use(express.static(path.join(__dirname, "frontend", "build")));
-
-// Interfaces
-interface Forecast {
-  time: Date;
-  temp: number;
-}
 
 interface Prediction {
   creationMills: number;
@@ -51,8 +45,8 @@ app.get("/api/prediction", async (req, res) => {
   const document = await predictions.findOne({
     creationMills: {
       $gte: oneHourAgoMills.getTime(),
-    }
-  })
+    },
+  });
 
   if (!document) {
     //TODO: Set newDocument values to return values from data
@@ -60,17 +54,18 @@ app.get("/api/prediction", async (req, res) => {
 
     const newDocument: Prediction = {
       creationMills: new Date().getTime(),
-      predictedTemp: 1,
-      actualTemp: 1,
-      predictedSpeed: 1,
-      actualSpeed: 1,
-      predictedDegrees: 1,
-      actualDegrees: 1,
+      predictedTemp: data.predictedTemp,
+      actualTemp: data.actualTemp,
+      predictedSpeed: data.predictedSpeed,
+      actualSpeed: data.actualSpeed,
+      predictedDegrees: data.predictedDegrees,
+      actualDegrees: data.actualDegrees,
     };
 
     // TODO: Send JSON
 
     await predictions.insertOne(newDocument);
+    res.json(newDocument);
   } else {
     res.json({
       predictedDegrees: document.predictedDegrees,
@@ -79,7 +74,7 @@ app.get("/api/prediction", async (req, res) => {
       actualDegrees: document.actualDegrees,
       actualSpeed: document.actualSpeed,
       actualTemp: document.actualTemp,
-    })
+    });
   }
 });
 
@@ -109,3 +104,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`This app is available on http://localhost:${PORT}/`);
 });
+

@@ -12,7 +12,6 @@ export default async function getData(): Promise<any> {
     axios
       .get(url)
       .then(async (response) => {
-
         const dataArray = response.data;
         const day = 24 * 60 * 60;
         const year = 365.2425 * day;
@@ -28,26 +27,28 @@ export default async function getData(): Promise<any> {
 
           toReturn.push((time - mean.DATE) / std.DATE);
           toReturn.push(
-            (windSpeed * Math.cos((windDir * Math.PI) / 180) - mean.Wx) / std.Wx,
+            (windSpeed * Math.cos((windDir * Math.PI) / 180) - mean.Wx) /
+              std.Wx,
           );
           toReturn.push(
-            (windSpeed * Math.sin((windDir * Math.PI) / 180) - mean.Wy) / std.Wy,
+            (windSpeed * Math.sin((windDir * Math.PI) / 180) - mean.Wy) /
+              std.Wy,
           );
           toReturn.push(
             (Math.sin(time * ((2 * Math.PI) / day)) - mean["Day sin"]) /
-            std["Day sin"],
+              std["Day sin"],
           );
           toReturn.push(
             (Math.cos(time * ((2 * Math.PI) / day)) - mean["Day cos"]) /
-            std["Day cos"],
+              std["Day cos"],
           );
           toReturn.push(
             (Math.sin(time * ((2 * Math.PI) / year)) - mean["Year sin"]) /
-            std["Year sin"],
+              std["Year sin"],
           );
           toReturn.push(
             (Math.cos(time * ((2 * Math.PI) / year)) - mean["Year cos"]) /
-            std["Year cos"],
+              std["Year cos"],
           );
           toReturn.push((temp - mean.Temp) / std.Temp);
         }
@@ -70,7 +71,6 @@ export default async function getData(): Promise<any> {
           );
 
           const predictedTemp = array[0][23][2] * std.Temp + mean.Temp;
-          console.log(dataArray[0]);
           const obj = {
             predictedDegrees,
             predictedSpeed,
@@ -81,7 +81,6 @@ export default async function getData(): Promise<any> {
           };
           resolve(obj);
         });
-
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
