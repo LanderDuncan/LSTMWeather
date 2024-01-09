@@ -1,0 +1,59 @@
+#compass {
+  min-height: 500px;
+  min-width: 500px;
+  border: 10px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#compassCenter {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.arrow {
+  height: 500px;
+  position: absolute;
+}
+
+#compassData {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#actualData {
+  color: #74b3ce;
+}
+
+#predictedData {
+  color: #ffa00a;
+}
+
+@media only screen and (max-width: 480px) {
+  #compass {
+    min-height: 300px;
+    min-width: 300px;
+  }
+
+  #compassCenter {
+    width: 15px;
+    height: 15px;
+  }
+
+  .arrow {
+    height: 300px;
+  }
+
+  #compassData {
+    height: auto;
+    gap: 10px;
+  }
+}
