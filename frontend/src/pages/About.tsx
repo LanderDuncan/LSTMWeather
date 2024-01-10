@@ -1,11 +1,5 @@
-import AboutBody from "../components/AboutBody";
-
 const About = () => {
-  return (
-    <div>
-      <AboutBody />
-    </div>
-  );
+  return <div id="body"></div>;
 };
 
 export default About;

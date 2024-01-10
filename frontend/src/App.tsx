@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import Forecast from "./pages/Forecast";
 import About from "./pages/About";
-import ErrorPage from "./pages/ErrorPage";
+import Error from "./pages/Error";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -11,9 +11,9 @@ const App = () => {
       <Header />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Forecast />} />
           <Route path="/about" element={<About />} />
-          <Route path="*" element={<ErrorPage />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
       <Footer />

@@ -1,9 +1,9 @@
-import Compass from "./Compass/Compass";
-import CompassData from "./Compass/CompassData";
+import Compass from "../components/Compass/Compass";
+import CompassData from "../components/Compass/CompassData";
 import Data from "../schemas/data";
 
 const data: Data = {
-  predictedDegrees: 45,
+  predictedDegrees: 180,
   predictedSpeed: 100,
   predictedTemp: 45,
   actualDegrees: 65,
@@ -11,13 +11,13 @@ const data: Data = {
   actualTemp: 50,
 };
 
-const HomeBody = () => {
+const Forecast = () => {
   return (
     <div id="body">
-      <Compass data={Data} />
+      <Compass data={data} />
       <CompassData data={data} />
     </div>
   );
 };
 
-export default HomeBody;
+export default Forecast;

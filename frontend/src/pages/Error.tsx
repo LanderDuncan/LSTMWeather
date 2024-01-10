@@ -1,4 +1,4 @@
-const ErrorBody = () => {
+const Error = () => {
   return (
     <div id="body">
       <h1 className="Error">Error 404. Page Not Found</h1>
@@ -6,4 +6,4 @@ const ErrorBody = () => {
   );
 };
 
-export default ErrorBody;
+export default Error;
