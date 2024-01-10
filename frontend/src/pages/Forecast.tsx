@@ -1,17 +1,30 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import Compass from "../components/Compass/Compass";
 import CompassData from "../components/Compass/CompassData";
 import Data from "../schemas/data";
 
-const data: Data = {
-  predictedDegrees: 180,
-  predictedSpeed: 100,
-  predictedTemp: 45,
-  actualDegrees: 65,
-  actualSpeed: 88,
-  actualTemp: 50,
-};
-
 const Forecast = () => {
+  const [data, setData] = useState<Data>({
+    predictedTemp: 0,
+    predictedSpeed: 0,
+    predictedDegrees: 0,
+    actualTemp: 0,
+    actualSpeed: 0,
+    actualDegrees: 0,
+  });
+
+  useEffect(() => {
+    axios
+      .get(process.env.REACT_APP_DATA_LOCATION || "")
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  });
+
   return (
     <div id="body">
       <Compass data={data} />

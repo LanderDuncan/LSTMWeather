@@ -25,6 +25,10 @@ const client = new MongoClient(uri);
 // Configure Express
 app.use(express.static(path.join(__dirname, "frontend", "build")));
 
+//Setup Cors
+import cors from "cors";
+app.use(cors());
+
 interface Prediction {
   creationMills: number;
   predictedTemp: number;
@@ -104,4 +108,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`This app is available on http://localhost:${PORT}/`);
 });
-
