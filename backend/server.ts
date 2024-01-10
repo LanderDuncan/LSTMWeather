@@ -4,8 +4,8 @@ import cors from "cors";
 import path from "path";
 const __dirname = path.resolve();
 
-import predictionRouter from "../routes/predictionRouter.ts";
-import modelRouter from "../routes/modelRouter.ts";
+import modelRouter from "./routes/modelRouter";
+import predictionRouter from "./routes/predictionRouter";
 
 // Configure Express
 const app = express();
