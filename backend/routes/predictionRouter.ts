@@ -1,6 +1,6 @@
 import express from "express";
 import Prediction from "../interfaces/Prediction";
-import getData from "../backend/Library/LSTMFunc";
+import getData from "../Library/LSTMFunc";
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
 
@@ -81,4 +81,3 @@ predictionRouter.get("/", async (req, res) => {
 });
 
 export default predictionRouter;
-
