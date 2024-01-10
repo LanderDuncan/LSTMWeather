@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import Compass from "../components/Compass/Compass";
 import CompassData from "../components/Compass/CompassData";
@@ -15,10 +14,11 @@ const Forecast = () => {
   });
 
   useEffect(() => {
-    axios
-      .get(process.env.REACT_APP_DATA_LOCATION || "")
+    fetch("/api/prediction")
       .then((res) => {
-        setData(res.data);
+        res.json().then((jsonResult) => {
+          setData(jsonResult);
+        });
       })
       .catch((error) => {
         console.error(error);
