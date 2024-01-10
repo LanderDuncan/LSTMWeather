@@ -19,14 +19,6 @@ jobs:
           propertyPath: env_variables['URI']
           value: ${{ secrets.URI }}
           commitChange: false
-
-    - name: Update YAML React location
-      uses: fjogeleit/yaml-update-action@main
-      with:
-          valueFile: 'app.yaml'
-          propertyPath: env_variables['REACT_APP_DATA_LOCATION']
-          value: ${{ secrets.REACT_APP_DATA_LOCATION }}
-          commitChange: false
           
     - name: Update YAML model location
       uses: fjogeleit/yaml-update-action@main
