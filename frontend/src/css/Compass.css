@@ -19,6 +19,7 @@
 .arrow {
   height: 500px;
   position: absolute;
+  transition-duration: 2s;
 }
 
 #compassData {
