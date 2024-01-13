@@ -4,7 +4,7 @@ This project examines the accuracy of a simple LSTM (Long Short-Term Memory) neu
 
 ## Demo
 
-You can find a demo of this project at [weather.martinangell.com](https://weather.martinangell.com) or [weather.landerduncan.net](https://weather.landerduncan.net) depending on which of us you like more
+You can find a demo of this project at <a href="https://weather.martinangell.com" target="_blank">weather.martinangell.com</a> or <a href="https://weather.landerduncan.net" target="_blank">weather.landerduncan.net</a> depending on which of us you like more
 
 ## Technologies
 
@@ -59,4 +59,4 @@ Martin Angell - Full Stack Development
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+<a href="https://github.com/LanderDuncan/LSTMWeather/blob/main/LICENSE" target="_blank">MIT</a>
