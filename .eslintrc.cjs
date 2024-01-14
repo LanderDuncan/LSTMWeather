@@ -26,7 +26,7 @@ module.exports = {
   },
   plugins: ["@typescript-eslint", "react"],
   rules: {
-    "max-len": ["error", 80],
+    "max-len": ["error", 110],
     "multiline-comment-style": ["error", "starred-block"],
     indent: ["error", 2],
     "linebreak-style": ["error", "unix"],

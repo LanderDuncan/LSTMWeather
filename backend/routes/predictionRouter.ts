@@ -1,6 +1,6 @@
 import express from "express";
-import Prediction from "../interfaces/Prediction";
-import getData from "../Library/LSTMFunc";
+import Prediction from "../interfaces/Prediction.js";
+import getData, { predictionResult } from "../Library/LSTMFunc";
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
 
@@ -42,7 +42,7 @@ predictionRouter.get("/", async (req, res) => {
 
   if (!document) {
     // Only run this code if there is no prediction from the last hour
-    let data: Prediction;
+    let data: predictionResult;
     try {
       // Set data to the data from within this current hour
       data = await getData();

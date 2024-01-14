@@ -50,7 +50,20 @@ TO BE FILLED OUT LATER
 
 ## Contributing
 
-You are welcome to contribute, but I'm not sure why you would. Make a pull request for any small changes and open an issue for large changes before making a pull request.
+We welcome contributions from the community! Whether it's reporting a bug, suggesting an enhancement, or contributing code, your help is greatly appreciated.
+
+### Bug Reports & feature requests
+
+If you come across a bug or would like to request a feature, please [open an issue](https://github.com/yourusername/yourproject/issues) with a detailed description and informative title. 
+
+### Code Contributions
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push to the branch.
+5. Open a pull request with a clear title and description.
+
 
 ## Credits
 
