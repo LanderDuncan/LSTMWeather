@@ -1,6 +1,7 @@
 import express from "express";
 import modelData from "../../models/LSTMjs/model.json";
 import path from "path";
+const __dirname = path.resolve();
 
 const modelRouter = express.Router();
 

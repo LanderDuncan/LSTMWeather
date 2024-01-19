@@ -29,7 +29,6 @@ module.exports = {
     "max-len": ["error", 80],
     "multiline-comment-style": ["error", "starred-block"],
     indent: ["error", 2],
-    "linebreak-style": ["error", "unix"],
     quotes: ["error", "double"],
     semi: ["error", "always"],
   },

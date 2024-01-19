@@ -17,6 +17,7 @@ export default async function getData(): Promise<predictionResult> {
   // Create promise
   const serverPromise = new Promise<predictionResult>((resolve, reject) => {
     const url =
+      // eslint-disable-next-line max-len
       "https://aviationweather.gov/api/data/metar/?ids=ksts&format=json&hours=25";
     const toReturn: number[] = [];
     // Fetch data from aviationweather.gov

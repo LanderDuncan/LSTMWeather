@@ -45,7 +45,7 @@ predictionRouter.get("/", async (req, res) => {
     let data: Prediction;
     try {
       // Set data to the data from within this current hour
-      data = await getData();
+      data = {...await getData(), creationMills: new Date().getTime()};
     } catch (error) {
       /*
        * If the data from the actual weather API has any errors,
@@ -60,20 +60,9 @@ predictionRouter.get("/", async (req, res) => {
       data = allPredictions[0];
     }
 
-    // Create a new document to be inserted into the database
-    const newDocument: Prediction = {
-      creationMills: new Date().getTime(),
-      predictedTemp: data.predictedTemp,
-      actualTemp: data.actualTemp,
-      predictedSpeed: data.predictedSpeed,
-      actualSpeed: data.actualSpeed,
-      predictedDegrees: data.predictedDegrees,
-      actualDegrees: data.actualDegrees,
-    };
-
     // Send the user the data and insert it into the database
-    res.json(newDocument);
-    await predictions.insertOne(newDocument);
+    res.json(data);
+    // await predictions.insertOne(data);
   } else {
     // If a document was created within this hour, send its data to the endpoint
     res.json(document);
