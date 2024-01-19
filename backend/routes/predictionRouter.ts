@@ -62,7 +62,7 @@ predictionRouter.get("/", async (req, res) => {
 
     // Send the user the data and insert it into the database
     res.json(data);
-    // await predictions.insertOne(data);
+    await predictions.insertOne(data);
   } else {
     // If a document was created within this hour, send its data to the endpoint
     res.json(document);
