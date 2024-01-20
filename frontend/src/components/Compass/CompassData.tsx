@@ -11,13 +11,25 @@ const CompassData = (props: Props) => {
         <h1>Actual</h1>
         <h2>Temperature: {props.data.actualTemp}°C</h2>
         <h2>Wind Speed: {props.data.actualSpeed} kn</h2>
-        <h2>Wind Direction: {props.data.actualDegrees}°</h2>
+        <h2>
+          Wind Direction:
+          {props.data.actualDegrees >= 0
+            ? props.data.actualDegrees
+            : 360 + props.data.actualDegrees}
+          °
+        </h2>
       </div>
       <div id="predictedData">
         <h1>Predicted</h1>
         <h2>Temperature: {props.data.predictedTemp.toFixed(1)}°C</h2>
         <h2>Wind Speed: {props.data.predictedSpeed.toFixed(1)} kn</h2>
-        <h2>Wind Direction: {props.data.predictedDegrees.toFixed(1)}°</h2>
+        <h2>
+          Wind Direction:
+          {props.data.predictedDegrees >= 0
+            ? props.data.predictedDegrees.toFixed(1)
+            : (360 + props.data.predictedDegrees).toFixed(1)}
+          °
+        </h2>
       </div>
     </div>
   );
