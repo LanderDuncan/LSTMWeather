@@ -1,13 +1,15 @@
 // Imports
 import express from "express";
 import cors from "cors";
+import path from "path";
+const __dirname = path.resolve();
 
 import modelRouter from "./routes/modelRouter";
 import predictionRouter from "./routes/predictionRouter";
 
 // Configure Express
 const app = express();
-app.use(express.static("../frontend/build"));
+app.use(express.static(path.join(__dirname, "frontend", "build")));
 
 //Setup Cors
 app.use(cors());
@@ -24,7 +26,7 @@ app.use("/tfjs_artifacts", modelRouter);
  * access an API or training route, they will be sent to the React project
  */
 app.get("*", (req, res) => {
-  res.sendFile("../frontend/build/index.html");
+  res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
 });
 
 // Open server with default port of 3000
@@ -32,5 +34,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`This app is available on http://localhost:${PORT}/`);
 });
-
-export default app;

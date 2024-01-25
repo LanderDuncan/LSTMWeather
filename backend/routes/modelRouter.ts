@@ -1,5 +1,8 @@
 import express from "express";
 import modelData from "../../models/LSTMjs/model.json";
+import path from "path";
+const __dirname = path.resolve();
+
 const modelRouter = express.Router();
 
 // Route that returns the training data for the model
@@ -9,7 +12,7 @@ modelRouter.get("/model.json", async (req, res) => {
 
 // Route that downloads the binary of the prediction model
 modelRouter.get("/group1-shard1of1.bin", async (req, res) => {
-  const filePath = "./models/LSTMjs/group1-shard1of1.bin";
+  const filePath = path.join(__dirname, "/models/LSTMjs/group1-shard1of1.bin");
 
   // Sending the file as a download
   res.download(filePath, "group1-shard1of1.bin", (err) => {
