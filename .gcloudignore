@@ -4,3 +4,15 @@
 /frontend/build
 /frontend/node_modules
 .git
+.github
+.eslintrc.cjs
+LICENSE
+README.md
+jest.config.js
+/tests/
+systemdesign.md
+DataProcessing.ipynb
+LSTM.ipynb
+cleanData.csv
+System_Diagram.png
+global-hourly-2024-01-02T20-32-28.csv
