@@ -77,15 +77,15 @@ export default async function getData(): Promise<predictionResult> {
 
           x.array().then((array) => {
             // De-normalize prediction
-            const predictedWx = array[0][23][0] * std.Wx + mean.Wx;
-            const predictedWy = array[0][23][1] * std.Wy + mean.Wy;
+            const predictedWx =(array as number[][][])[0][23][0] * std.Wx + mean.Wx;
+            const predictedWy = (array as number[][][])[0][23][1] * std.Wy + mean.Wy;
 
             const predictedDegrees =
               Math.atan2(predictedWx, predictedWy) * (180 / Math.PI);
             const predictedSpeed = Math.sqrt(
               Math.pow(predictedWx, 2) + Math.pow(predictedWy, 2),
             );
-            const predictedTemp = array[0][23][2] * std.Temp + mean.Temp;
+            const predictedTemp = (array as number[][][])[0][23][2] * std.Temp + mean.Temp;
 
             // Generate return object using predicted data
             const obj: predictionResult = {
