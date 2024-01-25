@@ -15,10 +15,11 @@ header {
 }
 
 #headerLinks {
-  width: 300px;
+  margin-left: 20px;
+  width: 200px;
   height: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 #headerLinks a {

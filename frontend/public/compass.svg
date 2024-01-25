@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{font-family:'MyriadPro-Regular';}
+	.st2{font-size:60px;}
+</style>
+<g>
+	<path d="M400,15c52,0,102.4,10.2,149.9,30.2c45.8,19.4,87,47.2,122.4,82.5c35.4,35.4,63.1,76.5,82.5,122.4
+		C774.8,297.6,785,348,785,400s-10.2,102.4-30.2,149.9c-19.4,45.8-47.2,87-82.5,122.4c-35.4,35.4-76.5,63.1-122.4,82.5
+		C502.4,774.8,452,785,400,785s-102.4-10.2-149.9-30.2c-45.8-19.4-87-47.2-122.4-82.5c-35.4-35.4-63.1-76.5-82.5-122.4
+		C25.2,502.4,15,452,15,400s10.2-102.4,30.2-149.9c19.4-45.8,47.2-87,82.5-122.4c35.4-35.4,76.5-63.1,122.4-82.5
+		C297.6,25.2,348,15,400,15 M400,0C179.1,0,0,179.1,0,400s179.1,400,400,400s400-179.1,400-400S620.9,0,400,0L400,0z"/>
+</g>
+<text transform="matrix(1 0 0 1 380.2603 62.6101)" class="st0 st1 st2">N</text>
+<text transform="matrix(1 0 0 1 385.2104 772.6102)" class="st0 st1 st2">S</text>
+<text transform="matrix(1 0 0 1 19.6201 417.61)" class="st0 st1 st2">W</text>
+<text transform="matrix(1 0 0 1 740.2401 417.61)" class="st0 st1 st2">E</text>
+</svg>
