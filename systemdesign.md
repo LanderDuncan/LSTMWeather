@@ -45,21 +45,16 @@ Despite deployment being done in Google Cloud Platform, the cloud architecture w
 
 ### TypeScript
 
-After the decision to use NodeJS, we had to choose between writing the code in JavaScript or using TypeScript to add a layer of type safety. After analyzing the development of the TypeScript ecosystem since its initial launch and the well-documented integration of it with several of the other technologies we were considering using, we saw that the advantage of strict-typing that it offered far outweighed the marginally more mature JavaScript ecosystem.
+After the decision to use NodeJS, we had to choose between writing the code in JavaScript or using TypeScript to add a layer of type safety. After analyzing the development of the TypeScript ecosystem since its initial launch and the well-documented integration of it with several of the other technologies we were considering using, we saw that the advantage of strict typing that it offered far outweighed the marginally more mature JavaScript ecosystem.
 
 ## Frontend
 
 ### React
 
-<!-- We choose to use a React frontend for a few reasons. Primarily, that was the frontend framework that we were the most familiar with. However, it also very easily compiles to static html and gives us the freedom to use a completely seperate backend. It also permitted us to create a relatively small and simple frontend that would load quickly to accomodate for our rather slow hosting server. Finally, the useState hook made it increadibly easy to give simple default and overridable values for the data until the api responds with the most recent prediction. -->
-
-### Frontend Design Overview
-
-<!-- We used create react app to get a very simple react project that we modified from there. We used that default file structure in combination with some minor modifications required to set up a router as to permit an error 404 page. While we originally used Axios to fetch our data from the backend we switched to using fetch to retrieve the data, as fetch allows for fetching from relative paths. -->
+We choose to use a React frontend for a few reasons. Primarily, that was the frontend framework that we had the most technical proficiency in. However, it also very easily compiles to static html and gives us the freedom to use a completely separate backend. It also permitted us to create a fast and responsive front end. Finally, the useState hook made it incredibly easy to give simple default and overridable values for the data until the API responds with the most recent prediction.
 
 ### Reactive Design
-<!-- 
-We took into account the many kinds of devices that may be viewing our website, so we handwrote CSS that was designed mainly for desktop and laptop screens, but that still was visually appealing on mobile and tablet screens without losing any of the data. While manually writing CSS would never be our first inclination, we chose to do it ourselves instead of using some kind of framework because of the compass that shows the difference between the actual and predicted data. The compass would require manual styling regardless, so we decided it would be better to fully self-style instead of mixing some kind of framework with our own styling. -->
+We took into account the many kinds of devices that may be viewing our website, so we wrote CSS that was visually appealing on all screen sizes, while also displaying the necessary information.
 
 ## Backend
 
@@ -70,12 +65,12 @@ The decision to use NodeJS was not one taken lightly. While it is capable of han
 
 ### ExpressJS
 
-<!-- Using Express was another easy choice as it would integrate easily with our react frontend, and would permit a more appealing structure for routing. Express was also beneficial for how well documented it is as we wanted our primary focus to go towards making the actual predictive algorithm work instead of creating some kind of hyper-complex backend system. The simplicity and reliability of Express made it an easy choice. -->
+ExpressJS was our choice for building our Rest API for the backend due to its strong integration with NodeJS, its ability to do static file serving, and its strong community support. Since the TensorflowJS API requires us to host the model files in a web server, we needed static file serving to deliver the .bin and .json files.
 
 ### MongoDB
 
 MongoDB is not traditionally used as a caching layer. However, the flexibility, cost, and simplicity made this an obvious choice. If we had used a database that enforces strict schema and wanted to add more labels to the model while preserving historical predictions, we would have to modify the entire database. Using this technology allows us to change the schema of the database incredibly easily. In addition, Typescript enforces an interface for the data that is going to be uploaded to the database, which reduces the weakness associated with the flexibility.
-In terms of the cost, most relational databases are associated with high running costs when compared with MongoDB's generous free tier.
+In terms of cost, most relational databases are associated with high running costs when compared with MongoDB's generous free tier.
 The massive community associated with the MongoDB-NodeJS connection allowed for incredible online resources and a simple API which massively decreased development time.
 Redis, which is the classic caching database, only allows key-value pairs which does not allow us to have an entire prediction set contained within one document. We could have, theoretically, enforced a naming schema by adding some index to the key (predicted_wind_1), but this increases the potential for errors and the number of database queries needed to accomplish the same task.
 

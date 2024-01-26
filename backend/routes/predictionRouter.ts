@@ -1,6 +1,6 @@
 import express from "express";
 import Prediction from "../interfaces/Prediction";
-import getData from "../Library/LSTMFunc";
+import getData from "../library/LSTMFunc";
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
 

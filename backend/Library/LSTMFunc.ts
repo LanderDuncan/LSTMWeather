@@ -2,16 +2,7 @@ import * as tf from "@tensorflow/tfjs";
 import axios from "axios";
 import std from "../../models/LSTMjs/std.json";
 import mean from "../../models/LSTMjs/mean.json";
-
-//TODO: move to seperate file
-export interface predictionResult {
-  predictedDegrees: number;
-  predictedSpeed: number;
-  predictedTemp: number;
-  actualDegrees: number;
-  actualSpeed: number;
-  actualTemp: number;
-}
+import { predictionResult } from "../interfaces/PredictionResult";
 
 export default async function getData(): Promise<predictionResult> {
   // Create promise
